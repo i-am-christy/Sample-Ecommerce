@@ -14,14 +14,19 @@ async function fetchProducts() {
 }
 
 async function displayProducts(products) {
-    const productContainer =  document.getElementById("productContainer")
+    
     //clear previous html html content
     productContainer.innerHTML = '';
 
-    //setTimeout(()=>{
+    //get the the id of the div where the products will be displayed
+    const productContainer =  document.getElementById("productContainer")
+
+    
     products.forEach((product) =>{
+
     //create a new element
     const productDiv = document.createElement("div");
+
     //set innerHTML attribute
     productDiv.innerHTML = `
             <img src="${product.thumbnail}">
@@ -30,6 +35,6 @@ async function displayProducts(products) {
         `
     //append each of the product attributes to the parent container
     productContainer.appendChild(productDiv);
-    //}, 1500)
+
     })
 }
